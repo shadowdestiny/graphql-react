@@ -1,0 +1,81 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+"Esto representa un aeropuerto"
+type Aeropuerto {
+    aviones: [Avion!]!
+    "Identificador de un aeropuerto"
+    id: ID!
+    localizacion: String!
+    rutas: [Ruta!]
+}
+
+type Avion {
+    id: ID!
+    matricula: String!
+    pasajeros: [Pasajero!]!
+    velocidadHora: Int!
+}
+
+type Mutation {
+    actualizarVelocidadHora(idAvion: ID!, velocidadHora: Int): Avion!
+    addPostUser(content: String, email: String, title: String): Post!
+    addUser(email: String, name: String): User!
+    crearPasajero(apellido: String, idAvion: ID!, nombre: String): Pasajero
+    "Este método sirve para eliminar un post de un usuario"
+    deletePost(id: Int): Post
+    updateUser(email: String, name: String): User!
+    vaciarPasajeros(idAvion: ID!): Avion!
+}
+
+type Pasajero {
+    apellido: String!
+    id: ID!
+    nombre: String!
+}
+
+type Post {
+    content: String
+    id: ID!
+    title: String!
+    user: User!
+}
+
+type Query {
+    allPost: [Post!]!
+    allUsers: [User!]!
+    allUsersPostgres: [User!]!
+    "Retornara la lista de aeropuertos"
+    listarAeropuertos: [Aeropuerto!]!
+    obtenerAeropuerto(id: ID, localizacion: String): Aeropuerto
+    "Retornara el aeropuerto"
+    obtenerAeropuertoPorId(
+        "Identificador de un aeropuerto"
+        id: ID!
+    ): Aeropuerto
+}
+
+type Ruta {
+    fechaHoraSalida: DateTime!
+    id: ID!
+    kilometros: Int!
+}
+
+"Connection DB"
+type User {
+    createAt: DateTime!
+    email: String!
+    name: String
+    post: [Post]
+}
+
+scalar DateTime
+
+input inputPost {
+    content: String
+    title: String!
+}
