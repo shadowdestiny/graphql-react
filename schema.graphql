@@ -24,6 +24,7 @@ type Avion {
 type Mutation {
     actualizarVelocidadHora(idAvion: ID!, velocidadHora: Int): Avion!
     addPostUser(content: String, email: String, title: String): Post!
+    addPostUserById(content: String, title: String, userId: Int): Post!
     addUser(email: String, name: String): User!
     crearPasajero(apellido: String, idAvion: ID!, nombre: String): Pasajero
     "Este método sirve para eliminar un post de un usuario"

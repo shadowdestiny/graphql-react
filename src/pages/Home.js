@@ -88,7 +88,6 @@ function Home() {
 
     const onSubmit = (event) => {
         event.preventDefault()
-        const form = event.currentTarget;
 
         const formData = new FormData(event.target),
             formDataObj = Object.fromEntries(formData.entries())
@@ -110,12 +109,10 @@ function Home() {
                     }
                 })
         }
-
     }
 
     return (
         <div>
-
             <Form onSubmit={onSubmit}>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
