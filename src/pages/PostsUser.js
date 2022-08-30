@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useQuery, gql, useLazyQuery, useMutation} from "@apollo/client";
+import { gql, useLazyQuery, useMutation} from "@apollo/client";
 import {useParams} from "react-router";
 import Post from "../components/Post";
 import {Button, Form} from "react-bootstrap";

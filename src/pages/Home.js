@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useQuery, useMutation, gql} from "@apollo/client";
 import Users from "../components/Users";
 import {useNavigate} from "react-router";

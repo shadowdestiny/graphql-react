@@ -1,3 +1,15 @@
+# prisma graphql
+
+These containers allow to display an instance of Prisma and Grahpql
+
+## Steps to follow configure our environment
+1. [ ] Clone .env.example renamed to .env
+2. [ ] Execute in our console the following command ``docker-compose build``
+3. [ ] Execute in our console the following command ``docker-compose up``
+4. [ ] Execute in other console the following command ``docker-compose exec reactjs bash``, then once inside, run the following command ``npm i``. This installs the dependencies
+5. [ ] Init project in path ./ of project ``npm start``
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Container, Navbar, Nav, NavDropdown} from "react-bootstrap";
 
 function NavBarComponent() {

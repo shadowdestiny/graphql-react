@@ -9,7 +9,7 @@ import NavBarComponent from "./components/NavBarComponent";
 const client = new ApolloClient({
     cache: new InMemoryCache(),
     link: new HttpLink({
-        uri: 'http://localhost:4001'
+        uri: process.env.REACT_APP_PATH_GRAPHQL_ENV
     })
 })
 

@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  reactjs:
+    build:
+      context: ./dockerdev/node
+      dockerfile: Dockerfile
+      target: react
+    image: node:14-alpine
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    ports:
+      - ${REACT_APP_PORT}:3000
+    command: >
+       bash -c "sleep infinity"
+    environment:
+      REACT_APP_PATH_GRAPHQL_ENV: ${REACT_APP_PATH_GRAPHQL_ENV}
