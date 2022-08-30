@@ -28,6 +28,7 @@ type Mutation {
     crearPasajero(apellido: String, idAvion: ID!, nombre: String): Pasajero
     "Este método sirve para eliminar un post de un usuario"
     deletePost(id: Int): Post
+    deleteUser(id: Int): User!
     updateUser(email: String, name: String): User!
     vaciarPasajeros(idAvion: ID!): Avion!
 }
@@ -39,6 +40,7 @@ type Pasajero {
 }
 
 type Post {
+    authorId: Int!
     content: String
     id: ID!
     title: String!
@@ -47,6 +49,7 @@ type Post {
 
 type Query {
     allPost: [Post!]!
+    allPostByUser(userId: Int): [Post!]!
     allUsers: [User!]!
     allUsersPostgres: [User!]!
     "Retornara la lista de aeropuertos"
@@ -69,6 +72,7 @@ type Ruta {
 type User {
     createAt: DateTime!
     email: String!
+    id: ID!
     name: String
     post: [Post]
 }

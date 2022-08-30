@@ -2,8 +2,10 @@
 import './App.css';
 import {GuestRouter} from "./router/GuestRouter";
 import {BrowserRouter} from "react-router-dom";
-import {ApolloClient, ApolloProvider, gql, HttpLink, InMemoryCache} from "@apollo/client";
-
+import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache} from "@apollo/client";
+import 'bootstrap/dist/css/bootstrap.css';
+import './custom.scss';
+import NavBarComponent from "./components/NavBarComponent";
 const client = new ApolloClient({
     cache: new InMemoryCache(),
     link: new HttpLink({
@@ -14,8 +16,12 @@ const client = new ApolloClient({
 function App() {
   return (
       <ApolloProvider client={client}>
+          <NavBarComponent></NavBarComponent>
+          <br />
           <BrowserRouter>
-              <GuestRouter/>
+              <div className={"container"}>
+                  <GuestRouter/>
+              </div>
           </BrowserRouter>
       </ApolloProvider>
   );
